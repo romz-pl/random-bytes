@@ -16,8 +16,8 @@ TEST( random_bytes, get )
 
 TEST( random_bytes, uniqueness )
 {
-    const std::size_t item_no = 10 * 1000;
-    constexpr std::size_t byte_no = 128 / 8;
+    constexpr std::size_t item_no = 100 * 1000;
+    constexpr std::size_t byte_no = 16;
     std::vector< std::uint8_t > bytes( byte_no );
     std::set< std::vector< std::uint8_t > > set;
 
@@ -30,8 +30,8 @@ TEST( random_bytes, uniqueness )
 
 TEST( random_bytes, randomness )
 {
-    const std::size_t item_no = 100 * 1000;
-    constexpr std::size_t byte_no = 32;
+    constexpr std::size_t item_no = 100 * 1000;
+    constexpr std::size_t byte_no = 16;
     constexpr std::size_t bit_no = byte_no * 8;
     std::vector< std::uint8_t > bytes( byte_no );
 
