@@ -10,9 +10,10 @@ SET( ROMZ_CXX_FLAGS -Wall -Wpedantic -Wextra -pthread -g -O0 -fprofile-arcs -fte
 SET( ROMZ_C_FLAGS -Wall -Wpedantic -Wextra -pthread -g -O0 -fprofile-arcs -ftest-coverage )
 
 
-include(CTest)
-enable_testing(true)
-add_subdirectory(3rdparty/googletest)
+include( CTest )
+enable_testing( true )
+add_subdirectory( 3rdparty/googletest )
 
-add_subdirectory(src)
+add_subdirectory( src )
+add_subdirectory( tests )
 
