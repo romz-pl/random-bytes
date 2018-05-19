@@ -4,8 +4,9 @@
 
 TEST( random_bytes, get )
 {
-	
-//ASSERT_NO_THROW( dd.create() );
+    random_bytes rb;
+
+    ASSERT_NO_THROW( rb.get() );
 	
 }
 
