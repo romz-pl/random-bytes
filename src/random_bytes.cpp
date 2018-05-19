@@ -4,9 +4,13 @@
 #include <openssl/err.h>
 #include <stdexcept>
 
+// Static member of class random_bytes
+std::mutex random_bytes::m_mutex;
 
 void random_bytes::get( std::vector< std::uint8_t >& bytes )
 {
+    std::lock_guard< std::mutex > lock( m_mutex, std::adopt_lock );
+
     const int rc = RAND_bytes( bytes.data(), bytes.size() );
     if( rc != 1 )
     {
